@@ -7,7 +7,6 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 //event when click generate
 document.getElementById("generate").addEventListener("click",async ()=>{
-    debugger
     //get zip code data
     let zipCodeData=document.querySelector("#zip").value;
     if(zipCodeData){
@@ -20,7 +19,6 @@ document.getElementById("generate").addEventListener("click",async ()=>{
     //fetch data with async,await
         const res =await fetch(`${zipCodeUrl}?zip=${zipCodeData}&appid=${apiKey}`)
         const weatherAPIData=await res.json();
-        
     }
   
 })

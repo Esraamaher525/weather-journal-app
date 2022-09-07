@@ -24,6 +24,10 @@ app.use(express.static('website'));
  app.listen(PORT,hostname,()=>{
     console.log(`port is ${PORT}`);
  })
+ //get request
+ app.get('/getData',(req,res)=>{
+        res.send(projectData)
+ })
 
 
 
