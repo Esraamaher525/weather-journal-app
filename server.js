@@ -2,7 +2,6 @@
 projectData = {};
 const PORT=4000;
 const hostname="127.0.0.1";
-const apiKey="4ef2d3191bcfeacc2f56140f8cf05f57";
 // Require Express to run server and routes
 const express=require("express");
 // Start up an instance of app
