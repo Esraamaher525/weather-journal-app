@@ -25,8 +25,13 @@ app.use(express.static('website'));
     console.log(`port is ${PORT}`);
  })
  //get request
- app.get('/getData',(req,res)=>{
-        res.send(projectData)
+ app.get('/all',(req,res)=>{
+    res.send(projectData)
+ })
+ //post request
+ app.post('/sendWeatherData',(req,res)=>{
+    projectData={...req.body};
+    res.end();
  })
 
 
