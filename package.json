@@ -8,5 +8,16 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Esraamaher525/weather-journal-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Esraamaher525/weather-journal-app/issues"
+  },
+  "homepage": "https://github.com/Esraamaher525/weather-journal-app#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }
