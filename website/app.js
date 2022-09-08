@@ -9,16 +9,8 @@ let newDate = (d.getMonth() + 1) + '.' + d.getDate() + '.' + d.getFullYear();
 //methods
 //send request to open weather map APIS
 const getTempData = async () => {
-    //fetch data with then , catch
-    // let weatherAPIData={};
-    // fetch(`${zipCodeUrl}?zip=${zipCode.value}&appid=${apiKey}`)
-    // .then(res=>res.json())
-    // .then(data=>weatherAPIData=data)
-    // .catch(err=>console.log(err))
-    //fetch data with async,await
     const res = await fetch(`${zipCodeUrl}?zip=${zipCode.value}&appid=${apiKey}`)
-    const weatherAPIData = await res.json();
-    return weatherAPIData;
+    return res.json();
 }
 //post data to server
 const sendWeatherData = async (weatherAPIData) => {
@@ -51,10 +43,19 @@ document.getElementById("generate").addEventListener("click", async () => {
     //get zip code data
     if (zipCode.value) {
         getTempData()
-            .then(data=>sendWeatherData(data))
+            .then(response => {
+                //handle errors
+                if (!response.main) {
+                    alert(response.message)
+                    throw new Error("Not response", { cause: response });
+                } else {
+                    return response;
+                }
+            })
+            .then(data => sendWeatherData(data))
             .then(getAllData)
-            .then(res=>viewData(res))
-            .catch(err=>console.log(err))
+            .then(res => viewData(res))
+            .catch(err => console.log(err))
     }
 
 
