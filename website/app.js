@@ -9,7 +9,7 @@ let newDate = (d.getMonth() + 1) + '.' + d.getDate() + '.' + d.getFullYear();
 //methods
 //send request to open weather map APIS
 const getTempData = async () => {
-    const res = await fetch(`${zipCodeUrl}?zip=${zipCode.value}&appid=${apiKey}`)
+    const res = await fetch(`${zipCodeUrl}?zip=${zipCode.value}&appid=${apiKey}&units=imperial`)
     return res.json();
 }
 //post data to server
