@@ -1,5 +1,5 @@
 /* Global Variables */
-const apiKey = "4ef2d3191bcfeacc2f56140f8cf05f57";
+const apiKey = '4ef2d3191bcfeacc2f56140f8cf05f57&units=imperial';
 const zipCodeUrl = "https://api.openweathermap.org/data/2.5/weather";
 const feelingElement = document.getElementById("feelings");
 const zipCode = document.querySelector("#zip");
@@ -9,7 +9,7 @@ let newDate = (d.getMonth() + 1) + '.' + d.getDate() + '.' + d.getFullYear();
 //methods
 //send request to open weather map APIS
 const getTempData = async () => {
-    const res = await fetch(`${zipCodeUrl}?zip=${zipCode.value}&appid=${apiKey}&units=imperial`)
+    const res = await fetch(`${zipCodeUrl}?zip=${zipCode.value}&appid=${apiKey}`)
     return res.json();
 }
 //post data to server
